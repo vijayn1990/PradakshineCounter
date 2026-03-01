@@ -57,7 +57,7 @@
         </div>
         </td>
         <td>
-            <div> <input type="text" id="roundId" style="font-size: xx-large; text-align: center;" value="0" disabled>
+            <div> <input type="text" id="mantraRoundId" style="font-size: xx-large; text-align: center;" value="0" disabled>
     </div> 
 </td>
         </div>
@@ -66,14 +66,15 @@
             <img id="mantraAddBtn" src="images/addIcon.jpg" alt="Add button" width="200" height="200" onclick="addMantraRound()">
         </div>
             </td>
-            </tr>
-        </table>
-        <br>
+        <td>    
         <table border="2">
             <tr>
                 <td>Mantra count</td>
                 <td><label id="mantraId" style="font-size: xx-large; text-align: center;">0</label></td>
             </tr>
+        </table>
+        </td>
+        </tr>
         </table>
         <div>
 
@@ -130,6 +131,8 @@
         {
             //console.log("add mantra button is clicked");
             document.getElementById("mantraId").innerText=++mantraCount;
+            document.getElementById("mantraRoundId").value=mantraCount;
+            
 
 
         }
@@ -138,7 +141,8 @@
             //console.log("remove mantra button is clicked");
             if(mantraCount>0)
             {
-                document.getElementById("mantraId").innerText= --mantraCount;  
+                document.getElementById("mantraId").innerText= --mantraCount;
+                document.getElementById("mantraRoundId").value=mantraCount;  
 
             }
              
