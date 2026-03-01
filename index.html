@@ -92,7 +92,7 @@
             document.getElementById("roundId").value=++currentCount;
             document.getElementById("currentRoundID").innerText= ++currentRoundNo;
             document.getElementById("totalRoundsID").innerText= ++totalRoundCount;
-            if(totalRoundCount%4==0)
+            if(totalRoundCount%16==0)
             {
                 
                 document.getElementById("currentRoundID").innerText= 0;
@@ -112,7 +112,7 @@
                 document.getElementById("roundId").value=currentRoundNo;
                 currentCount--;
 
-                if(totalRoundCount%4==0)
+                if(totalRoundCount%16==0)
             {
                 
                 document.getElementById("currentRoundID").innerText= 0;
