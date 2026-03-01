@@ -136,7 +136,12 @@
         function removeMantraRound()
         {
             //console.log("remove mantra button is clicked");
-             document.getElementById("mantraId").innerText= --mantraCount;
+            if(mantraCount>0)
+            {
+                document.getElementById("mantraId").innerText= --mantraCount;  
+
+            }
+             
 
         }
     </script>
