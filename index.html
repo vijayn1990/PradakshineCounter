@@ -1,0 +1,142 @@
+<html>
+    <title>
+        Pradhakshine Counter Page
+    </title>
+    <body>
+        <div>
+
+        </div>
+        <table border="2">
+            <tr>            
+            <td>
+                <div>
+            <img id="minusBtn" src="images/minusIcon.jpg" alt="Minus button" width="200" height="200" onclick="removeRound()" >
+        </div>
+        </td>
+        <td>
+            <div> <input type="text" id="roundId" style="font-size: xx-large; text-align: center;" value="0" disabled>
+    </div> 
+</td>
+        </div>
+            <td> 
+                <div>
+            <img id="addBtn" src="images/addIcon.jpg" alt="Add button" width="200" height="200" onclick="addRound()">
+        </div>
+            </td>
+            
+        <td></td>
+            <td>
+        <table border="2">
+            <td> Set No:  </td>
+                <td> <label id="setID" style="font-size: xx-large; text-align: center;">1</label></td>
+            </tr>
+            <tr> 
+                <td> Round No:  </td>
+                <td> <label id="currentRoundID" style="font-size: xx-large; text-align: center;">0</label></td>
+            </tr>
+            <tr>
+                <td>Total rounds:</td>
+                <td>
+                    <label id="totalRoundsID" style="font-size: xx-large; text-align: center;">0</label>
+                </td>
+            </tr>
+            
+        </table>
+    </td>
+
+        </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+<table border="2">
+            <tr>            
+            <td>
+                <div>
+            <img id="mantraMinusBtn" src="images/minusIcon.jpg" alt="Minus button" width="200" height="200" onclick="removeMantraRound()" >
+        </div>
+        </td>
+        <td>
+            <div> <input type="text" id="roundId" style="font-size: xx-large; text-align: center;" value="0" disabled>
+    </div> 
+</td>
+        </div>
+            <td> 
+                <div>
+            <img id="mantraAddBtn" src="images/addIcon.jpg" alt="Add button" width="200" height="200" onclick="addMantraRound()">
+        </div>
+            </td>
+            </tr>
+        </table>
+        <br>
+        <table border="2">
+            <tr>
+                <td>Mantra count</td>
+                <td><label id="mantraId" style="font-size: xx-large; text-align: center;">0</label></td>
+            </tr>
+        </table>
+        <div>
+
+        </div>
+    </body>
+    </html>
+    <script type="text/javascript">
+        let currentCount=0;
+        let currentRoundNo=0;
+        let totalRoundCount=0;
+        let setCount=1;
+        let mantraCount=0;
+        function addRound()
+        {
+            //console.log("add button is clicked");
+            document.getElementById("roundId").value=++currentCount;
+            document.getElementById("currentRoundID").innerText= ++currentRoundNo;
+            document.getElementById("totalRoundsID").innerText= ++totalRoundCount;
+            if(totalRoundCount%4==0)
+            {
+                
+                document.getElementById("currentRoundID").innerText= 0;
+                document.getElementById("setID").innerText=++setCount;
+                currentRoundNo=0;
+
+            }
+        }
+
+        function removeRound()
+        {
+            //console.log("remove button is clicked");
+            if(currentCount>0)
+            {
+                document.getElementById("currentRoundID").innerText= --currentRoundNo;
+                document.getElementById("totalRoundsID").innerText= --totalRoundCount;
+                document.getElementById("roundId").value=currentRoundNo;
+                currentCount--;
+
+                if(totalRoundCount%4==0)
+            {
+                
+                document.getElementById("currentRoundID").innerText= 0;
+                document.getElementById("setID").innerText=--setCount;
+                currentRoundNo=0;
+
+            }
+            }
+            
+
+        }
+
+
+        function addMantraRound()
+        {
+            //console.log("add mantra button is clicked");
+            document.getElementById("mantraId").innerText=++mantraCount;
+
+
+        }
+        function removeMantraRound()
+        {
+            //console.log("remove mantra button is clicked");
+             document.getElementById("mantraId").innerText= --mantraCount;
+
+        }
+    </script>
