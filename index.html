@@ -108,11 +108,11 @@
         function removeRound()
         {
             //console.log("remove button is clicked");
-            if(currentCount>0)
+            if(currentCount>0 && setCount>0)
             {
                 document.getElementById("currentRoundID").innerText= --currentRoundNo;
                 document.getElementById("totalRoundsID").innerText= --totalRoundCount;
-                document.getElementById("roundId").value=currentRoundNo;
+                document.getElementById("roundId").value=totalRoundCount;
                 currentCount--;
 
                 if(totalRoundCount%16==0)
